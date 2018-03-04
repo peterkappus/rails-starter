@@ -16,12 +16,11 @@ before_action :authenticate_user!, except: [:index, :about, :debug_sign_in]
   end
 
   def search
-    #@goals = Goal.all.search(params[:q]) if params[:q].present?
     if params[:q].present?
       words = params[:q]
-      @goals = Goal.where('lower(name) LIKE ?',"%#{words.downcase}%")
-      @teams = Team.where('lower(name) LIKE ?',"%#{words.downcase}%")
-      #.where("lower(name) LIKE ? ","%#{words.downcase}%").collect{|u| u.goals}.flatten
+      #TODO: replace with your search functionality
+      @results = nil
+      #@results = Class.where('lower(name) LIKE ?',"%#{words.downcase}%")
     end
   end
 

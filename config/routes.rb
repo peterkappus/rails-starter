@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   get '/sign_in', to: 'home#debug_sign_in', as: :test_sign_in
 
   #post the form
-  #post '/search', to: 'home#search', as: :search
+  post '/search', to: 'home#search', as: :search
 
   #show the results
-  #get '/search', to: 'home#search'
+  get '/search', to: 'home#search'
 
   root 'home#index'
   #root 'teams#index'
