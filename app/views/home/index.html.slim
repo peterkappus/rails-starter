@@ -1,0 +1,16 @@
+.row
+  .col-md-8
+    h1 Welcome!
+.row
+  .col-md-8
+  /
+    ul.nav.nav-tabs
+      li class="#{params[:view] != 'stale' ? "active" : ''}" role="presentation"
+        a href="?view=recent" Top 5 latest updates this quarter
+      li class="#{params[:view] == 'stale' ? "active" : ''}"role="presentation"
+        a href="?view=stale" 5 most stale scores this quarter
+    ol.goal
+      - @scores.to_a.each do | score |
+        == render score.goal
+  /.col-md-4
+    h2 Reports

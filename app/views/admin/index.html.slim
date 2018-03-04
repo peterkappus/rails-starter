@@ -1,0 +1,36 @@
+.row
+  .col-sm-8
+    h1 Admin Things
+    p Hello special admin person. This are contains useful reports and methods that apply to the whole tool. Use with caution.
+
+    h2.underlined CSV Export
+    p Use the links below to export data to CSV for archiving, analysis, etc. To do a full backup/restore you must export each dataset.
+    ol.actions
+      /li = link_to "Export teams", show_export_teams_path
+      li = link_to "Export teams", teams_path(format: :csv)
+      li = link_to "Export user accounts", people_path(format: :csv)
+      /li = link_to "Export statuses", statuses_path(format: :csv)
+      li = link_to "Export OKRs", goals_path(format: :csv)
+      li = link_to "Export scores and progress updates", scores_path(format: :csv)
+      / #admin_export_teams_path
+
+    h2.underlined CSV Import
+    p To import data, upload eacn exported CSV file in the following order:
+    ol.actions
+      li Teams
+      li Users
+      /li Statuses
+      li Goals
+      li Scores
+    p This will <b>Update</b> rows with a matching id and <b>create new</b> rows where no id can be found. If in doubt, clear the data first.
+
+    = form_tag admin_import_path, multipart: true, class: "form-inline noprint" do
+      .form-group
+        =file_field_tag :file, :class=>"form-control"
+      =submit_tag "Import", :class=>"btn btn-primary"
+
+  .col-sm-4
+    aside
+      h2 Actions
+      ul.actions
+        /li =link_to 'Edit statuses', statuses_path

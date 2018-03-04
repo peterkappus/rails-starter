@@ -1,0 +1,7 @@
+id,name,hex_color,ordinal,description,require_learnings
+157,Not started,#566,0,"We haven't started working on this, yet.",
+158,In progress,#5a8c3e,1,In progress with no issues to report.,
+159,Heads up,#facf12,2,In progress. Has some issues but they're being handled within the team. Check the narrative for details.,
+160,Help!,#9d1c1f,3,In progress and experiencing issues which need external help to resolve. Check narrative for details.,
+161,Finished,#4a777c,4,"Done! Or at least, as done as it's going to get. No further work planned on this goal. Check narrative for final state and 'Lessons Learned'.",true
+162,Cancelled,#000,5,We've stopped work on this goal for some reason and don't plan to restart. Check narrative and lessons learned for detail.,true

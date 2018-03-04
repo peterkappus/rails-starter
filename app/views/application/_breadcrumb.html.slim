@@ -1,0 +1,19 @@
+ol.breadcrumb
+  li =link_to "Home", root_path
+  - team = @team
+  - ancestors = []
+  - if @team
+    - while(team.parent) do
+      - ancestors.unshift team.parent
+      - team = team.parent
+  - ancestors.each do |ancestor|
+    li =link_to truncate(ancestor.name, length: 40), ancestor, {:title=>ancestor.name}
+  - if @goal
+    li = link_to @goal.owner.name, @goal.owner
+    - goal = @goal
+    - ancestors = []
+    - while(goal.parent) do
+      - ancestors.unshift goal.parent
+      - goal = goal.parent
+    - ancestors.each do |ancestor|
+      li =link_to truncate(ancestor.name, length: 40), ancestor, {:title=>ancestor.name}

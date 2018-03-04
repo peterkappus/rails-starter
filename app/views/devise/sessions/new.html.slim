@@ -1,0 +1,23 @@
+.row
+  .col-md-6
+    h2
+      = t('.sign_in', default: 'Sign in')
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f|
+      .form-group
+        = f.label :email
+        = f.email_field :email, autofocus: true, class: 'form-control'
+      .form-group
+        = f.label :password
+        = f.password_field :password, autocomplete: 'off', class: 'form-control'
+      - if devise_mapping.rememberable?
+        .checkbox
+          = f.label :remember_me do
+            = f.check_box :remember_me
+            = t('.remember_me', default: 'Remember me')
+      = f.submit  t('.sign_in', default: 'Sign in'), class: 'btn btn-primary'
+    hr
+    = render 'devise/shared/links'
+  .col-md-6
+    h2  Need an account?
+    p Registration only takes a minute.
+    = link_to "Get started", new_user_registration_path, class: "btn btn-primary btn-large"

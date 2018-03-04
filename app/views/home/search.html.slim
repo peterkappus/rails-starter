@@ -1,0 +1,29 @@
+.row
+  .col-md-8
+    h2 Search results for:
+    form#search.big_form.site-search.form-inline name="bigSearchForm" method="get" action="#{search_path}"
+      .form-group style="margin-right: 5px"
+        input#site-search-text.js-search-focus.form-control type="search" name="q" title="Search" role="search" placeholder="Search" value="#{params[:q]}"
+      .form-group
+        input.btn.btn-default.btn-primary type="submit" value="Search"
+    p #{@goals.to_a.count + @teams.to_a.count} results
+    -if @teams.to_a.count > 0
+      .results
+        h4 Teams (#{@teams.count})
+        ul
+          - @teams.each do | team |
+            li 
+              h3 =link_to truncate_html(team.name, length: 100), team
+              == render partial: 'teams/indicator', locals: { team: team }
+              
+
+    -if @goals.to_a.count > 0
+      .results
+        h4 Goals (#{@goals.count})
+        ul
+          - @goals.each do | goal |
+            li 
+              h3 =link_to truncate_html(goal.name, length: 100), goal
+              =link_to goal.team.name, goal.team, style: "color: #333"
+
+  

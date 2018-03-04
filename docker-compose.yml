@@ -4,10 +4,24 @@ services:
     image: postgres
     volumes:
       - ./postgres-data:/var/lib/postgresql/data
+  #TODO: use remote phantomjs server instead of installin browser in web container
+  #Issue: poltergeist can't create a connection to 8910 says port in use :(
+  # container runs fine and is accessible from web container but poltergeist isn't hitting it...
+  # despite setting port and host in phantomjs driver registration (features/support/custom.rb)
+  # gave up and installed phantomjs binary in web container (see Dockerfile)
+
+  #pjs:
+  #  image: wernight/phantomjs
+  #  command: phantomjs --webdriver=8910
+  #  ports:
+  #    - "8910:8910"
 
   web:
     build: .
+    #command: bundle exec bash
+    #rails s -p 3000 -b '0.0.0.0'
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    #tty: true
     volumes:
       - .:/myapp
       #share bundler cache so we can update it without rebuilding the image
@@ -15,4 +29,5 @@ services:
     ports:
       - "3000:3000"
     depends_on:
+      #- pjs
       - db

@@ -6,10 +6,29 @@ git_source(:github) do |repo_name|
 end
 
 
+#really only needed for production...
+#gem 'sendgrid-ruby'
+
 gem 'slim-rails'
+
 #override variables via .env
 gem 'dotenv-rails', :groups => [:development, :test]
 
+#for financial year calculations (e.g. next quarfter, etc)
+gem 'fiscali'
+
+
+#for truncating html
+gem 'truncate_html'
+
+#login, etc.
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'html2slim'
+#gem 'kaminari'
+
+#gem 'bootstrap'
+#gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 gem 'bootstrap-generators'
 
 gem 'jquery-rails'
@@ -18,15 +37,11 @@ gem 'jquery-validation-rails'
 #pagination
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
-gem 'devise'
-gem 'devise-bootstrap-views'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-# use PG for heroku
-gem 'pg'
+gem 'rails', '~> 5.1.2'
+# Use postgresql as the database for Active Record
+gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -43,7 +58,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+# gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,8 +69,23 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber' #our testing framework
+  gem 'selenium-webdriver' #usual, firefox driver
+  gem 'phantomjs'
+  gem 'poltergeist' #headless driver
+  gem 'rspec' #gives us a few nice methods like "page.should"
+  gem 'pry' # for command line debugging
+  gem 'capybara-screenshot'
+  gem 'firefox'
+  gem 'capybara' #nice DSL for talking to the browser in code.
+  #gem 'capybara', '~> 2.13'
+  gem 'database_cleaner'
+
+  #for email testing
+  gem 'email_spec'
+  gem 'action_mailer_cache_delivery'
+
 end
 
 group :development do

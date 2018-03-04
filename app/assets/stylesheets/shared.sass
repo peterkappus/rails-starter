@@ -1,0 +1,290 @@
+$footer_height:   60px
+$secondary-text-colour: #6f777b
+
+
+.edit_progress_link
+  font-size: 0.8rem
+
+.vertical_center
+  display: -webkit-box
+  display: -webkit-flex
+  display: -moz-box
+  display: -ms-flexbox
+  display: flex
+  -webkit-flex-align: center
+  -ms-flex-align: center
+  -webkit-align-items: center
+  align-items: center
+  justify-content: center /* align horizontal */
+  align-items: center /* align vertical */
+
+.circle
+  border-radius: 50%
+  margin-left: 0rem
+  height: 1.8rem
+  width: 1.8rem
+  display: block
+  &:hover
+    text-decoration: none
+
+h3.underlined, h2.underlined
+  border-bottom: 1px solid #999
+  padding-bottom: 1rem
+  margin-top: 3rem
+
+.page-header
+  clear: both
+
+.breadcrumb
+  margin-bottom: 0.4rem
+
+.lessons
+  margin-top: 3rem
+
+.glyphicon.big
+  font-size: 3rem
+  margin: 0
+  padding: 0
+html
+  position: relative
+  min-height: 100%
+body
+  /* Margin bottom by footer height */
+  margin-bottom: $footer_height
+  padding: 0
+  nav
+    margin-bottom: 0.5rem
+
+.push
+  padding-bottom: 3rem
+
+.footer
+  position: absolute
+  padding-top: 0.5rem
+  bottom: 0
+  width: 100%
+  /* Set the fixed height of the footer here */
+  height: $footer_height
+  background-color: #f5f5f5
+  p
+    margin-top: 10px
+
+ol.subteams
+  margin-bottom: 0rem
+  margin-top: 1.8rem
+  padding-left: 2rem
+  li
+    font-size: 1.8rem
+    line-height: 1.8rem
+    margin-bottom: 1rem
+
+.form-group p
+  margin-top: 7px
+
+
+.block-label
+  display: block
+  float: none
+  clear: left
+  position: relative
+  background: #dee0e2
+  border: 1px solid #dee0e2
+  padding: 16px 30px 15px 47px
+  margin-bottom: 10px
+  cursor: pointer
+
+.block-label input
+  position: absolute
+  top: 15px
+  left: 15px
+  cursor: pointer
+  margin: 0
+  width: 29px
+  height: 29px
+  &:hover
+    border: 1px solid #000
+
+.field_with_errors
+  display: inline
+
+@media (min-width: 641px)
+  .block-label
+    float: left
+    clear: none
+    margin-right: 10px
+    font-size: 19px
+    line-height: 1.31579
+
+.control-label
+  font-size: 1.8rem
+
+.bignum_suffix
+  font-size: 5rem
+  font-weight: bold
+  display: inline
+  margin-left: 1rem
+
+input.bignum
+  font-size: 4rem
+  width: 10rem !important
+  height: 7rem
+  border: 2px solid #999
+
+textarea.bigtext
+  font-size: 2rem
+  width: 100%
+  height: 10rem
+
+.form-hint
+  font-size: 16px
+  margin-top: 1rem
+  line-height: 1.25
+  font-weight: 400
+  text-transform: none
+  display: block
+  color: #6f777b
+  font-weight: normal
+  margin-bottom: 5px
+
+.hint
+  font-size: 1.5rem
+  color: $secondary-text-colour
+
+.tiny_hint, .tiny_meta
+  font-size: 1rem
+  color: #999
+  a
+    color: #999
+
+h1
+  /*@extend .gel-canon*/
+  font-size: 3.5rem
+  line-height: 4rem
+  font-weight: bold
+  margin-top: 2rem
+
+h2
+  font-size: 2.5rem
+h3
+  font-size: 1.8rem
+  //margin-top: 4rem
+  /*@extend .gel-trafalgar*/
+
+/* Use a narrower grid */
+@media (min-width: 1200px)
+  .container
+    max-width: 970px
+
+@media(min-width: 800px)
+  .navbar-brand
+    padding: 15px 15px 0 0
+@media(max-width: 800px)
+  h1
+    font-size: 3rem
+    line-height: 3.5rem
+  h3
+    font-size: 1.8rem
+  h2
+    font-size: 2.5rem
+
+
+.auth_nav
+  margin-bottom: 1rem
+  clear: both
+
+@import "gel_typography.min"
+
+.navbar-nav
+  li a
+    color: #333
+    font-weight: bold
+    border-bottom: 3px solid #f8f8f8
+  .active a
+    border-bottom: 3px solid #e7e7e7
+.navbar-nav li a:hover
+  border-bottom: 3px solid #900
+
+ul
+  padding: 0
+  li
+    list-style-type: none
+    /*@extend .gel-double-pica*/
+    /*line-height: 2.5rem*/
+
+.comfy_list ul li
+  line-height: 2.5rem
+.show_bullets ul
+  padding-left: 3rem
+  li
+    list-style-type: disc
+
+.results
+  ul
+    margin-top: 2rem
+    li
+      margin-bottom: 3rem
+  .row
+    margin-bottom: 3rem
+  h4
+    margin-bottom: 3rem
+    margin-top: 2rem
+    background: #666
+    color: #fff
+    padding: 1rem
+  h3
+    display: inline
+    margin-right: 10px
+
+
+.form-group p.label
+  display: block
+  text-align: left
+  margin-top: 7.5px
+  font-size: 14px
+
+.big_form
+  input
+    &[type=search]
+      font-size: 3rem
+      padding: 3rem 1rem
+      margin: 2rem 1rem 2rem 0
+    &[type=submit]
+      font-size: 2rem
+      padding: 1.6rem 2rem
+
+.alpha-banner
+  background: #fe2
+  p
+    font-size: 12px
+    color: #333
+    display: block
+    margin-top: 7.5px
+
+.btn.remove
+  background: none
+  color: #337ab7
+aside
+  border-top: 10px solid #06a
+  margin-top: 10px
+  h2
+    margin-top: 1.5rem
+
+.actions
+  li
+    font-size: 1.6rem
+    margin-bottom: 0.4rem
+
+ul.actions
+  li
+    list-style-type: none
+
+
+input.error, textarea.error
+  border: 5px solid #f00
+
+/* for form validation */
+label.error
+  padding: 3rem
+  margin: 2rem 0
+  background: #faa
+  color: #600

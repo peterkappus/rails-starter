@@ -45,7 +45,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -59,7 +59,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "waxpaper_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "myapp_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -88,4 +88,23 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+  #Devise mailer default link...
+  config.action_mailer.default_url_options = { :host => ENV['DEVISE_DEFAULT_LINK_HOST'] }
+
+  # Setup the mailer config (for heroku)
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.smtp_settings = {
+      :user_name => ENV['SENDGRID_USERNAME'],
+      :password => ENV['SENDGRID_PASSWORD'],
+      :domain => 'bbcgoals.herokuapp.com',
+      :address => 'smtp.sendgrid.net',
+      :port => 587,
+      :authentication => :plain,
+      :enable_starttls_auto => true
+    }
+
+
 end

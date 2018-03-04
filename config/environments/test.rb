@@ -32,11 +32,18 @@ Rails.application.configure do
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the
   # ActionMailer::Base.deliveries array.
-  config.action_mailer.delivery_method = :test
+  #config.action_mailer.delivery_method = :test
+
+  config.action_mailer.delivery_method = :cache
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  #Devise mailer default link...
+  config.action_mailer.default_url_options = { host: ENV['DEVISE_DEFAULT_LINK_HOST'], port: 3000 }
+
+
 end

@@ -1,0 +1,9 @@
+id,created_at,goal_id,goal_name,amount,reason,learnings,user_id,user_name
+2145,2017-09-12 09:01:05 UTC,2598,How about a second kumquat key result?,30,Kumquat help!,,1327,Suzy Admin
+2147,2017-09-12 09:01:55 UTC,2596,An apple key result.,80,Delicious apples.,,1327,Suzy Admin
+2150,2017-09-12 09:08:49 UTC,2599,Q3 watermelon objective for Team B,25,Watermelon.,,1330,Alphonse Mabuse
+2143,2017-09-12 09:00:26 UTC,2597,Team A grape key result.,20,Delicious grapes.,,1329,Cindy Williams 2
+2144,2017-09-12 09:00:46 UTC,2597,Team A grape key result.,80,Completed grapes.,We learned grapes.,1328,Julia Walker 1
+2148,2017-09-12 09:02:23 UTC,2593,A top level banana objective for Team A.,40,Heads up. I love bananas.,,1329,Cindy Williams 2
+2149,2017-09-12 09:06:51 UTC,2600,Q3 mango key result.,50,Yum mangoes.,,1328,Julia Walker 1
+2146,2017-09-12 09:01:24 UTC,2598,How about a second kumquat key result?,80,Cancelled kumquat.,Learned kumquat.,1329,Cindy Williams 2
