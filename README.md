@@ -1,4 +1,6 @@
-# Rails Starter
+# UNSUPPORTED - Rails Starter
+
+This repo is pretty ancient now and unsupported. I'm keeping it a little longer for posterity but will probably delete it soon.
 
 A rails starter template using Slim, Devise, Bootstrap 3.2, docker, and cucumber.
 
